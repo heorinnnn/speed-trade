@@ -17,12 +17,22 @@
       width: 100vw;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #000 url('speedtrade.png') no-repeat center center;
-      background-size: 100% 100%;
+      background: #000000; /* 완전한 검정 배경 */
       font-family: 'NeoDunggeunmoPro-Regular', sans-serif, monospace;
       overflow: hidden;
+    }
+
+    /* 전체 배치를 아래로 5커서(약 50px) 정도 내림 */
+    .top-image {
+      max-width: 420px;
+      width: 50vw;
+      height: auto;
+      margin-bottom: 5px;
+      object-fit: contain;
+      transform: translateY(-50px); /* 기존 -100px에서 -50px로 내려서 전체적으로 아래로 이동 */
     }
 
     .timer-container {
@@ -31,7 +41,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin-top: 40px;
+      transform: translateY(-10px); /* 타이머 전체 위치도 함께 아래로 조정 */
     }
 
     .timer-display {
@@ -81,6 +91,9 @@
   </style>
 </head>
 <body>
+
+  <!-- 타이머 위쪽에 올라올 이미지 -->
+  <img src="text.png" alt="Text Image" class="top-image">
 
   <div class="timer-container">
     <div id="timer" class="timer-display">20:00</div>
